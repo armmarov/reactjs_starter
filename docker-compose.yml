@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+
+  backend:
+    container_name: Backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - './backend:/app'
+      - '/app/node_modules'
+    ports:
+      - '3050:3050'
+    networks:
+      - app-net
+
+  webapp:
+    container_name: Webapp
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    volumes:
+      - './webapp:/app'
+      - '/app/node_modules'
+    depends_on:
+        - backend
+    ports:
+      - '3000:3000'
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: "bridge"
