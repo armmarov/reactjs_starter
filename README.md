@@ -1,14 +1,26 @@
-# SmartGrid_Webapp
+# ReactJS Starter Kits
 
-To start the apps
->> cd webapp
->> npm start
+#### To start the apps
 
-To run backend
->> cd backend
->> nodemon server
+```bash
+$ cd webapp
+$ npm start
+..
+```
 
-To run docker
->> docker-compose up --build -d
+#### To run backend
+
+```bash
+$ cd backend
+$ nodemon server
+..
+```
+
+#### To run services using docker
+
+```bash
+$ docker-compose up --build -d
+..
+```
 
 
